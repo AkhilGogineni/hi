@@ -5,32 +5,36 @@ import javax.swing.JOptionPane;
 
 public class ClimbingChallenge{
    
-   public void climbMountainGoingLeft(Climber temp){
+   public static void climbMountainGoingLeft(Climber temp){
+           temp.turnRight();
            temp.move();
            temp.move();
            temp.turnLeft();
            temp.move();
    }
    
-   public void climbMountainGoingRight(Climber temp){
+   public static void climbMountainGoingRight(Climber temp){
+           temp.turnLeft();
            temp.move();
            temp.move();
            temp.turnRight();
            temp.move();
    }
    
-   public void climbDownMountainGoingRight(Climber temp){
+   public static void climbDownMountainGoingRight(Climber temp){
            temp.turnRight();
            temp.move();
            temp.move();
            temp.turnLeft();
+           temp.move();
    }
    
-   public void climbDownMountainGoingLeft(Climber temp){
+   public static void climbDownMountainGoingLeft(Climber temp){
            temp.turnLeft();
            temp.move();
            temp.move();
            temp.turnRight();
+           temp.move();
            
    }
    
@@ -38,14 +42,50 @@ public class ClimbingChallenge{
    
       Display.openWorld("maps/mountain.map");
       Display.setSize(16,16);
-      Display.setSpeed(10);
+      Display.setSpeed(5);
         
-         Climber hiker = new Climber(7);
+      Climber hiker = new Climber(7);
       
+      hiker.turnRight();
+      hiker.move();
+      hiker.move();
+      
+      
+    for(int i = 0; i < 3; i++){
       climbMountainGoingRight(hiker);
-      climbDownMountainGoingRight(hiker);
-      
-      
- 
+    }
+    
+    hiker.move();
+    
+    for(int i = 0; i < 3; i++){
+         climbDownMountainGoingRight(hiker);
+    }
+    
+    hiker.turnAround();
+    hiker.move();
+    
+    
+    for(int i = 0; i < 3; i++){
+      climbMountainGoingLeft(hiker);
+    }
+    
+    hiker.move();
+    
+    for(int i = 0; i < 3; i++){
+      climbMountainGoingRight(hiker);
+    }
+    
+    hiker.move();
+    
+    for(int i = 0; i < 3; i++){
+      climbMountainGoingLeft(hiker);
+    }
+    
+    hiker.move();
+    
+    for(int i = 0; i < 3; i++){
+      climbDownMountainGoingLeft(hiker);
+    }
+    
       }
 }

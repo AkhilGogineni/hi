@@ -4,7 +4,7 @@ public class MultiTasker extends Athlete{
     
       // the default constructor
   public MultiTasker() {
-    super(1, 1, Display.NORTH, 0);
+    super(1, 1, Display.NORTH, Display.INFINITY);
   }
 
   // the two parameter constructor for location (x, y)

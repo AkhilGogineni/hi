@@ -1,3 +1,4 @@
+  
 // Miner.java				ITCS
 import edu.fcps.karel2.Display;
 import edu.fcps.karel2.Robot;
